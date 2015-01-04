@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+require 'medoc'
+#require 'pry'
+
+def no_cd
+  $stdout.puts ''
+end
+
+def version
+  $stderr.puts "Medoc #{Medoc.version} - Adrien Cadet"
+  no_cd
+end
+
+def help
+  $stderr.puts "
+Medoc let you define some shortcuts to quickly move to another directory.
+
+Usage:
+  medoc \"<alias>\"
+Where
+  alias: alias to run.
+
+Options:
+  --init      Initializes Medoc config file
+  --help      Displays this message
+  --version   Gets current version
+  "
+  no_cd
+end
+
+if ARGV.size < 1
+  help
+else
+  arg = ARGV[0]
+
+  if arg == '--version'
+    version
+  elsif arg == '--help'
+    help
+  elsif arg == '--init'
+    begin
+      Medoc.init
+    rescue MedocError => e
+      $stderr.puts e.embedded_message
+      no_cd
+    rescue => e
+      $stderr.puts e.message
+      no_cd
+    end
+  else
+    begin
+      $stdout.puts File.expand_path(Medoc.run arg)
+    rescue MedocError => e
+      $stderr.puts e.embedded_message
+      no_cd
+    rescue => e
+      $stderr.puts e.message
+      no_cd
+    end
+  end
+end
