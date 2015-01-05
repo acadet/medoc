@@ -13,7 +13,7 @@ end
 
 def help
   $stderr.puts "
-Medoc let you define some shortcuts to quickly move to another directory.
+Medoc lets you define shortcuts to jump quickly to another directory.
 
 Usage:
   medoc \"<alias>\"
@@ -40,6 +40,8 @@ else
   elsif arg == '--init'
     begin
       Medoc.init
+      $stderr.puts "Created #{Medoc.config_file}"
+      no_cd
     rescue MedocError => e
       $stderr.puts e.embedded_message
       no_cd
