@@ -1,6 +1,6 @@
 # Medoc
 
-Medoc is a tiny Ruby gem for managing you shell aliases. Jump to another directory in a clever way.
+Medoc is a tiny Ruby gem for managing your shell aliases. Jump to another directory in a clever way.
 
 ## Get started
 
@@ -25,11 +25,11 @@ Here you go! Run `medoc your-alias` to leap to a directory.
 
 ## Configuration file
 
-Medoc lets user using a configuration file to define all his/her aliases: `~/.medoc.yml`.
+Medoc lets you use a configuration file to define all your aliases: `~/.medoc.yml`.
 
 When you are using Medoc for the first time, run `medoc --init` to automatically generate this file.
 
-Config file is a simple YAML file. Here is a sample:
+Config file is written in YAML. Here is a sample:
 
 ```yaml
 my-first-alias: path/to/my/fabulous/directory
@@ -43,6 +43,8 @@ magic-alias:
 	- path/to/somewhere
 ```
 
-As you may have seen, you can define an alias using two ways. First one is the simplest: just specify the path to your directory.
+As you may have seen, you can define an alias using two ways. First one is the simplest: just specify the path of your directory.
 
-Other way is an array mixing aliases and directories. Use here existing aliases and normal directories. Medoc will get the job done for you.
+Otherwise, you can use an array. Each element is either a directory or another alias. Medoc will jump to the first one, then moving to following etc.
+
+Whatever the method you use, Medoc will get the job done for you.
