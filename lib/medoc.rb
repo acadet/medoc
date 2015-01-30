@@ -33,7 +33,7 @@ class Medoc
    # Returns current version
    ##
   def self.version
-    '1.0.1'
+    '1.0.2'
   end
 
   ###
