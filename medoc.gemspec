@@ -11,4 +11,6 @@ Gem::Specification.new do |s|
   s.email = 'acadet@live.fr'
   s.files = [ 'README.md', 'bin/medoc', 'lib/medoc.rb' ]
   s.executables = [ 'medoc' ]
+
+  # Dependencies
 end
