@@ -1,4 +1,4 @@
-# Medoc
+# Medoc [![Gem Version](https://badge.fury.io/rb/medoc.svg)](http://badge.fury.io/rb/medoc)
 
 Medoc is a tiny Ruby gem for managing your shell aliases. Jump to another directory in a clever way.
 
